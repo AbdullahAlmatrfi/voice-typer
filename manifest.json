@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Voice Typer",
+  "version": "1.2",
+  "description": "Click any text field, press the mic, speak (Arabic or English), and your words are typed. Optional auto-correct.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.languagetool.org/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}
